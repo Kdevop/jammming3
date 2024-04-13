@@ -1,0 +1,17 @@
+.track {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.trackaction {
+    cursor: pointer;
+    padding:  0.5rem;
+    font-size: 1.05rem;
+    transition: color .25s;
+    border: 0px;
+    background-color: #32323C;
+    color: #DF8908;
+}
+

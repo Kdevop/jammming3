@@ -1,0 +1,26 @@
+.appplaylist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: 10px 10px; */
+  width: 100%;
+}
+
+.titlecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.header {
+  padding-top: 20px;
+  background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  width: 70%;
+  font-size: 90px;
+  font-weight: 600;
+}

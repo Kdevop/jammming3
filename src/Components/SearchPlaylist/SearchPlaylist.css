@@ -1,0 +1,28 @@
+.searchplaylist {
+    width: 37%;
+    height: 950px;
+    overflow-y: scroll;
+    padding: 5px;
+    background: #32323C;
+    margin-left: 50px;
+    
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.searchplaylist h2 {
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Tracklist {
+    width: 100%;
+}
