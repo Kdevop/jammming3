@@ -4,8 +4,7 @@ import './SearchPlaylist.css';
 import Track from '../Track/Track';
 
 const SearchPlaylist = (props) => {
-    const results = props.userSearchResults;
-    console.log(props)
+    
 
     return (
         <div className = 'searchplaylist'>
@@ -22,6 +21,9 @@ const SearchPlaylist = (props) => {
                     <Track 
                     track={track}
                     key={track.id}
+                    onAdd={props.onAdd}
+                    isRemoval={false}
+
                     />
                 )
             })}
