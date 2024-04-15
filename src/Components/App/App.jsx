@@ -7,37 +7,11 @@ import SearchBar from '../SearchBar/SearchBar';
 import Spotify from '../util/Spotify/Spotify';
 
 function App() {
-  const [searchResults, setSearchResults] = useState(
-    [{
-      name: 'track1',
-      artist: 'artist1',
-      album: 'album1',
-      id: 'id 1',
-    },
-    {
-      name: 'track2',
-      artist: 'artist2',
-      album: 'album2',
-      id: 'id 2',
-    }]
-  );
+  const [searchResults, setSearchResults] = useState([]);
 
   const [playlistName, setPlaylistName] = useState('Enter Playlist Name');
 
-  const [playlistTracks, setPlaylistTracks] = useState(
-    [{
-      name: 'example track1',
-      artist: 'exmaple artist1',
-      album: 'example album1',
-      id: 'id1',
-    },
-    {
-      name: 'example track2',
-      artist: 'exmaple artist2',
-      album: 'example album2',
-      id: 'id2',
-    },
-  ]);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const addTrack = (track)  => {
    const existingTrack = playlistTracks.find((t) => t.id === track.id);
@@ -61,11 +35,16 @@ function App() {
   const savePlaylist = () => {
     const trackURIs = playlistTracks.map((t) => t.urs);
     // more details on saving to sportify soon
+    Spotify.savePlaylist(playlistName, trackURIs).then(() => {
+      setPlaylistName('New Playlist')
+      setPlaylistTracks([]);
+    });
   }
 
   const search = useCallback((term) => {
     Spotify.search(term).then(setSearchResults);
   }, []);
+
 
   return (
     <div className='appcontainer'>
@@ -82,7 +61,6 @@ function App() {
           
           {/* Add a Playlist component */}
           <Playlist 
-          name={playlistName} 
           userTracks={playlistTracks}
           onRemove={removeTrack}
           onNameChange={updatePlaylistName}
