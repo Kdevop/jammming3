@@ -56,7 +56,7 @@ function App() {
       </div>
       <div className='appplaylist'>
           {/* Add a Search Playlist Component */}
-          <SearchPlaylist data={searchResults} onAdd={addTrack} onRemove={removeTrack}/>
+          <SearchPlaylist data={searchResults} onAdd={addTrack} onRemove={removeTrack} playlistTracks={playlistTracks}/>
           
           
           {/* Add a Playlist component */}
